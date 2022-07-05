@@ -1,0 +1,27 @@
+// C++ code
+//
+#include<Servo.h> //servo library
+Servo myServo;
+int angleRotation =0;
+void setup()
+{
+ myServo.attach(13); //signal pin connected to 13
+}
+
+void loop() //Rotation Loop
+{
+  for (angleRotation=0;angleRotation<=180;angleRotation++)
+  {
+    myServo.write(angleRotation);
+    delay(15);//you can adjust the speed of rotation 
+    
+  }
+  delay(1000);
+  for (angleRotation=180;angleRotation>=0;angleRotation--)
+  {
+    myServo.write(angleRotation);
+    delay(15);
+  }
+  delay(1000);
+  
+}
